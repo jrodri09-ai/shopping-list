@@ -5,24 +5,26 @@ window.onload = function () {
 function initShoppingList() {
     let form = document.getElementById("item-from");
 
-    form.addEventListener("submit",(event) => {
-        handleItemForm(e, form);
+    form.addEventListener("submit", (event) => {
+        handleItemForm(event, form);
     });
 }
-function handleItemForm (event, formRef) {
+
+function handleItemForm(event, formRef) {
     if (event.preventDefault) {
         event.preventDefault();
     }
 
-  addItemToShoppingList();
+    addItemToShoppingList();
 
     return false;
 }
-function demo ( ) {
+
+function demo() {
     return 1;
 }
 
-function addItemtoShoppingList() {
+function addItemToShoppingList() {
     let itemName = document.getElementById("item-name");
     let itemAmount = document.getElementById("item-amount");
 
@@ -30,7 +32,8 @@ function addItemtoShoppingList() {
     let itemListRef = document.getElementById("shopping-list");
     itemListRef.insertAdjacentHTML("afterend", itemHtml);
 }
-function createListItemHtml(itemName,itemAmount){
+
+function createListItemHtml(itemName, itemAmount) {
     return `<li>
             ${itemName} - ${itemAmount}
             <button type="button">Delete Item</button>
